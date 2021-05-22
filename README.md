@@ -1,3 +1,8 @@
+# Nombres
+
+Andrés Matamala Schafer     20.166.453-5
+Benjamín Ramos Tapia        20.481.689-1
+
 # Prueba2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
