@@ -1,0 +1,30 @@
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="vista px-1 py-4">
+        <form [formGroup]="tareaForm" (ngSubmit)="onSubmit()" class="m-2">
+
+            <div class="form-group largo ">
+                <label>Título</label>
+                <input formControlName="titulo" type="text" class="form-control" placeholder="Título">
+            </div>
+
+            <div class="form-group largo">
+                <label>Estado</label>
+                <select formControlName="select" class="form-control">
+                    <option [ngValue]="null" enabled>Select</option>
+                    <option *ngFor="let opcion of opciones" [ngValue]="opcion">
+                        {{opcion.opcione}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group largo">
+                <label>Descripción</label>
+                <textarea formControlName="descripcion" type="text" class="form-control descripcion" maxlength="150"
+                    placeholder="Descripción"> </textarea>
+            </div>
+
+            <button [disabled]="tareaForm.invalid" type="submit" name="submit"
+                class="btn btn-outline-primary">Actualizar</button>
+        </form>
+    </div>
+</div>

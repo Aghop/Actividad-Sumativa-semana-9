@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<div>
+    <ul class="row list-unstyled">
+
+        <!-- rojo -->
+        <li class="col-4 col-sm-12 col-md-4 media">
+            <div class="col col-12">
+                <ng-container *ngFor="let tarea of tareaService.getTareas()">
+                    <div class="btn-group bg-danger w-100 m-2 notas" role="group" aria-label="tarea1"
+                        *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '1'">
+
+                        <div class="media-body ">
+
+                            <button (click)="onClick(tarea)"
+                                class="tarea_ tarea_{{tarea.estado}} btn btn-danger btn-block" id="id{{tarea.estado}}"
+                                *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '1'">
+                                {{ tarea.titulo }}
+
+                                <p *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '1'"
+                                    class="">
+                                    {{ tarea.descripcion }}
+                                </p>
+                            </button>
+                        </div>
+
+                        <button (click)="onX(tarea)" class="tarea_ tarea_{{tarea.estado}} btn btn-danger"
+                            *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '1' "
+                            id="id{{tarea.estado}}">X</button>
+
+                    </div>
+                </ng-container>
+            </div>
+        </li>
+
+        <!-- verde -->
+        <li class="col-4 col-sm-12 col-md-4 media">
+            <div class="col col-12">
+                <ng-container *ngFor="let tarea of tareaService.getTareas()">
+                    <div class="btn-group bg-warning w-100 m-2 notas" role="group" aria-label="tarea2"
+                        *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '2'">
+
+                        <div class="media-body ">
+
+                            <button (click)="onClick(tarea)"
+                                class="tarea_ tarea_{{tarea.estado}} btn btn-warning btn-block" id="id{{tarea.estado}}"
+                                *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '2'">
+                                {{ tarea.titulo }}
+
+                                <p *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '2'"
+                                    class="">
+                                    {{ tarea.descripcion }}
+                                </p>
+                            </button>
+
+                        </div>
+
+                        <button (click)="onX(tarea)" class="tarea_ tarea_{{tarea.estado}} btn btn-warning"
+                            *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '2' "
+                            id="id{{tarea.estado}}">X</button>
+
+                    </div>
+                </ng-container>
+            </div>
+        </li>
+
+        <!-- azul -->
+        <li class="col-4 col-sm-12 col-md-4 media">
+            <div class="col col-12">
+                <ng-container *ngFor="let tarea of tareaService.getTareas()">
+
+                    <div class="btn-group bg-info w-100 m-2 notas" role="group" aria-label="tarea3"
+                        *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '3'">
+
+                        <div class="media-body  ">
+
+                            <button (click)="onClick(tarea)"
+                                class="tarea_ tarea_{{tarea.estado}} btn btn-info btn-block" id="id{{tarea.estado}}"
+                                *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '3'">
+                                {{ tarea.titulo }}
+
+                                <p *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '3'"
+                                    class="">
+                                    {{ tarea.descripcion }}
+                                </p>
+                            </button>
+
+                        </div>
+
+                        <button (click)="onX(tarea)" class="tarea_ tarea_{{tarea.estado}} btn btn-info"
+                            *ngIf="!tareaService.getEliminados().includes(tarea) && tarea.estado === '3' "
+                            id="id{{tarea.estado}}">X</button>
+
+                    </div>
+                </ng-container>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+<footer>
+    <div class="fixed-bottom m-2 row justify-content-center">
+        <div class="col-sm-12 col-md-4">
+            <a [routerLink]="['/anadir']">
+                <button name="anadir" id="anadir" class="btn btn-primary btn-block">+Añadir</button>
+            </a>
+        </div>
+    </div>
+</footer>

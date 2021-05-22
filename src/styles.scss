@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+@media (min-width: 720px){
+    .largo{
+        width: 720px;
+    }
+}
+body {
+    background-color: #FFEBEE
+}
+.vista{
+    background-color: #fff;
+    border: none;
+    border-radius: 12px
+}
+.anadir{
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+}
